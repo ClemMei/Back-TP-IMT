@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Modifier une entree</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/annuaire/css/proj.css">
+</head>
+
+<body>
+	Modifier
+	<fieldset>
+		<form th:action="@{|/annuaire/modifier/${entry.getId()}|}" method="post">
+		ID: <span th:text="${entry.getId()}">Id</span><br>
+		
+			<label for="name">Nom : 
+			<input type="text" id="name" name="name" th:value="${entry.getName()}" size="30" /></label> <br> 
+			
+			<label for="surname">Prenom : 
+			<input type="text" id="surname" name="surname" th:value="${entry.getSurname()}" size="30" /></label> <br> 
+			
+			<label for="phone">Telephone : 
+			<input type="text" id="phone" name="phone" th:value="${entry.getPhone()}" size="30" /></label> <br> 
+			
+			<label for="city">Ville : 
+			<input type="text" id="city" name="city" th:value="${entry.getCity()}" size="30" /></label> <br> 
+			
+			<input type="submit" value="Submit" />
+		</form>
+	</fieldset>
+</body>
+</html>
